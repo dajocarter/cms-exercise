@@ -1,6 +1,6 @@
 ## Male killer whales need friends to survive
 
-![alt text](https://media.mnn.com/assets/images/2016/02/pronghorn-in-field.jpg)
+![alt text](https://media.mnn.com/assets/images/2017/10/ThreeOrcasKillerWhalesNearEachOther.jpg)
 
 It's tough being the outsider, especially if you're a killer whale.
 
