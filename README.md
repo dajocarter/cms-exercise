@@ -23,11 +23,13 @@ We strongly encourage you to pick a couple of optional improvements. The followi
 
 ## Project Structure
 
+We already wrote a few articles for you so that you don’t have to generate the content.
+
 ## Evalutation
 
 The app should run on any computer by running npm install and npm start. We’ll evaluate the exercise by looking at the end result and the code.
 
-Please provide the login route for the data entry UI view and the user login information. We should be able to login and succesfully view/edit the content of each specific post.
+Provide the login route for the data entry UI view and the user login information. We should be able to login and successfully view/edit the content of each specific post.
 
 
 ## Coding at Eaze
