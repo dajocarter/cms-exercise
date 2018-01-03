@@ -23,7 +23,7 @@ We strongly encourage you to pick a couple of optional improvements. The followi
 
 ## Project Structure
 
-We already wrote a few articles for you so that you don’t have to generate the content.
+We already provided a few articles for you so that you don’t have to generate the content.
 
 - [Article 1](https://github.com/eaze/wordpress-hw/blob/master/articles/article_1.md)
 - [Article 2](https://github.com/eaze/wordpress-hw/blob/master/articles/article_2.md)
