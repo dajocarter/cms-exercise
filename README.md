@@ -25,6 +25,10 @@ We strongly encourage you to pick a couple of optional improvements. The followi
 
 We already wrote a few articles for you so that you don’t have to generate the content.
 
+- (Article 1)[https://github.com/eaze/wordpress-hw/blob/master/articles/article_1.md]
+- (Article 2)[https://github.com/eaze/wordpress-hw/blob/master/articles/article_2.md]
+- (Article 3)[https://github.com/eaze/wordpress-hw/blob/master/articles/article_3.md]
+
 ## Evalutation
 
 The app should run on any computer by running npm install and npm start. We’ll evaluate the exercise by looking at the end result and the code.
