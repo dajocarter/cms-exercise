@@ -4,13 +4,15 @@
 
 ## Project
 
-The purpose of this exercise is to help the Eaze Engineering team get a feel for your technical skill level. This exercise has two parts: The first being the setup of a CMS environment using the Wordpress [REST API](https://developer.wordpress.org/rest-api/) and a front-end framework of your choice (React, Vue, Angular, etc.). For the second part of the exercise we would like you to build a web page that displays some articles combined with a list of GIFs from Giphy.
+The purpose of this exercise is to help the Eaze Engineering team get a feel for your technical skill level. This exercise has two parts: The first being the setup of a CMS environment using the Wordpress [REST API](https://developer.wordpress.org/rest-api/) and a front-end framework of your choice (React, Vue, Angular, etc.).
+
+For the frontend part of the exercise we've provided a small boilerplate React app generated with [create-react-app](https://github.com/facebook/create-react-app). Feel free to change this to a framework of your choice. In any case, please build a web page that displays some articles combined with a list of GIFs from Giphy.
 
 ## Wordpress Exercise
 
-You’ll need to get a WordPress development environment set up on your local machine using a front-end framework of your choice (React, Vue, Angular, etc.). Once that is running, create different blog posts with the provided data. Each article will have some tags associated with it and we would like for the app to dynamically include some GIFs, that are pulled in by the Giphy API, inside the content of the blog post.
+You’ll need to get a WordPress development environment set up on your local machine using the frontend web app. Once that is running, create different blog posts with the provided data. Each article will have some tags associated with it and we would like for the app to dynamically include some GIFs, that are pulled in by the Giphy API, inside the content of the blog post.
 
-Users should have a good experience on desktop, and mobile devices.
+Users should have a good experience on the web app on desktop and mobile devices.
 
 This exercise is pretty open ended in order to leave you some freedom to improve upon the base by focusing on what you like the most.
 
@@ -31,7 +33,7 @@ We already provided a few articles for you so that you don’t have to generate 
 
 ## Evaluation
 
-The app should run on any computer by running npm install and npm start. We’ll evaluate the exercise by looking at the end result and the code.
+The app should run on any computer by running `[npm|yarn] install` and `[npm|yarn] start`. We’ll evaluate the exercise by looking at the end result and the code.
 
 Provide the login route for the data entry UI view and the user login information. We should be able to login and successfully view/edit the content of each specific post.
 
