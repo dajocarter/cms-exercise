@@ -23,17 +23,19 @@ We strongly encourage you to pick a couple of optional improvements. The followi
 
 ## Project Structure
 
-We already provided a few articles for you so that you don’t have to generate the content.
+Import the provided [xml file](https://github.com/eaze/cms-exercise/blob/master/template.xml), to generate content, and properly test your theme data.
 
-- [Article 1](https://github.com/eaze/cms-exercise/blob/master/articles/article_1.md)
-- [Article 2](https://github.com/eaze/cms-exercise/blob/master/articles/article_2.md)
-- [Article 3](https://github.com/eaze/cms-exercise/blob/master/articles/article_3.md)
+```shell
+root/        # → Root folder for the project
+  ├── wp/    # → Local Wordpress Core (Running on port :8888)
+  └── app/   # → React client app
+```
 
 ## Evaluation
 
-The app should run on any computer by running npm install and npm start. We’ll evaluate the exercise by looking at the end result and the code.
+Assume that we will have a local instance of Wordpress running at the root level of the directory, running on port 8888. The react app will also be at root level so make sure to have your paths set up correctly.
 
-Provide the login route for the data entry UI view and the user login information. We should be able to login and successfully view/edit the content of each specific post.
+Once the Wordpress instance is running locally the front-end should run by running the create-react-app start script, either yarn start or npm start. We’ll evaluate the exercise by assessing the end result and reviewing the code.
 
 
 ## Coding at Eaze
