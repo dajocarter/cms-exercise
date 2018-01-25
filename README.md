@@ -1,53 +1,45 @@
-# Eaze Wordpress Front End Project
+# Eaze CMS Engineer Homework
+The purpose of this exercise is to help the Eaze Engineering team get a feel for your technical skill level.
+The end goal of the project is to build a system for writers to integrate GIFs into their articles. Writers should be able to search for GIFs directly in the WordPress editor. The articles are going to be rendered in a custom frontend (using React/Angular/Vue) that uses the WordPress API to fetch the content.
+This exercise is divided into two parts:
+Set up and customize WordPress
+Build a frontend for the data provided by the WordPress Rest API
+## WordPress Exercise
+1. You’ll need to get a WordPress development environment set up on your local machine.
+2. Use the provided template XML at `<root>/template.xml` to seed your database instance.
+3. Set up the editor so that writers will have the ability to select a GIF to include in an article.
+  a. The writer should should be able to:
+    - Search for a list of GIFs.
+    - Select one of the GIFs in the list to add it to the article.
+  b. The GIFs should be fetched using the Giphy API.
+  c. The writer should be able to select the GIF through the WordPress editor.
+4. Set up a frontend interface to view the articles with their associated GIFs.
+  a. We've provided a small boilerplate React app generated with [create-react-app](https://github.com/facebook/create-react-app). Feel free to change this to a framework of your choice. This should have basic routing and make it easy to view the different articles.
+5. Upload your project to a Git repository. We prefer Github but Bitbucket works as well.
 
-> Our Wordpress code challenge for engineering applicants
-
-## Project
-
-The purpose of this exercise is to help the Eaze Engineering team get a feel for your technical skill level. This exercise has two parts: The first being the setup of a CMS environment using the Wordpress [REST API](https://developer.wordpress.org/rest-api/) and a front-end framework of your choice (React, Vue, Angular, etc.).
-
-For the frontend part of the exercise we've provided a small boilerplate React app generated with [create-react-app](https://github.com/facebook/create-react-app). Feel free to change this to a framework of your choice. In any case, please build a web page that displays some articles combined with a list of GIFs from Giphy.
-
-## Wordpress Exercise
-
-You’ll need to get a WordPress development environment set up on your local machine using the frontend web app. Once that is running, create different blog posts with the provided data. Each article will have some tags associated with it and we would like for the app to dynamically include some GIFs, that are pulled in by the Giphy API, inside the content of the blog post.
-
-Users should have a good experience on the web app on desktop and mobile devices.
-
-This exercise is pretty open ended in order to leave you some freedom to improve upon the base by focusing on what you like the most.
-
-We strongly encourage you to pick a couple of optional improvements. The following are just some ideas, so if none of these interest you, feel free to do something that isn’t on this list:
-
-- Show off your CSS and design skills!
-- Animations are awesome! Show us what you got.
-- Use your UX hat to think of a creative way of injecting the GIFs.
-- Think of your development environment and how it will scale.
-
-## Project Structure
-
-Import the provided [xml file](https://github.com/eaze/cms-exercise/blob/master/template.xml), to generate content, and properly test your theme data.
+## Evaluation
+Assume that we will have a local instance of WordPress running at the root level of the directory, running on port 8888. The frontend app will also be at root level so make sure to have your paths set up correctly.
 
 ```shell
 root/        # → Root folder for the project
-  ├── wp/    # → Local Wordpress Core (Running on port :8888)
+  ├── wp/           # → Local WordPress Core (Running on port :8888)
+  ├── template.xml  # → Seed for database
   └── frontend/   # → React client app
 ```
 
-## Evaluation
+The frontend boilerplate provided starts using `[npm|yarn] install` and `[npm|yarn] start`. Make sure that your frontend app is able to do the same.
 
-Assume that we will have a local instance of Wordpress running at the root level of the directory, running on port 8888. The react app will also be at root level so make sure to have your paths set up correctly.
-
-Once the Wordpress instance is running locally the front-end should run by running the create-react-app start script, either yarn start or npm start. We’ll evaluate the exercise by assessing the end result and reviewing the code.
-
+## Optional improvements
+We strongly encourage you to pick a couple of optional improvements. The following are just some ideas, so if none of these interest you, feel free to do something that isn’t on this list:
+  - Show off your CSS on the frontend and design skills.
+  - Think of your development environment and how it will scale.
+  - Allow writers to include more than one GIF with editable ordering.
+  - Show off your UX skills and make really intuitive for writers to select a GIF.
 
 ## Coding at Eaze
-
-At [Eaze](https://www.eaze.com) we strive for writing simple, maintainable and clean code.
-
+At Eaze we strive for writing simple, maintainable and clean code.
 We prefer simplicity and over complexity.
-
 We comment our code and commit often.
-
 We love our users and we really care about providing a good user experience and pleasant UI.
+We encourage out of the box thinking and we love to be impressed.
 
-We encourage out of the box thinking and we love to be impressed!
