@@ -11,13 +11,13 @@ This exercise is divided into two parts:
 1. You’ll need to get a WordPress development environment set up on your local machine.
 2. Use the provided template XML at [`<root>/template.xml`](template.xml) to seed your database instance.
 3. Set up the editor so that writers will have the ability to select a GIF to include in an article.
-  a. The writer should should be able to:
-    - Search for a list of GIFs.
-    - Select one of the GIFs in the list to add it to the article.
-  b. The GIFs should be fetched using the Giphy API.
-  c. The writer should be able to select the GIF through the WordPress editor.
+    - The writer should should be able to:
+        - Search for a list of GIFs.
+        - Select one of the GIFs in the list to add it to the article.
+    - The GIFs should be fetched using the Giphy API.
+    - The writer should be able to select the GIF through the WordPress editor.
 4. Set up a frontend interface to view the articles with their associated GIFs.
-  a. We've provided a small boilerplate React app generated with [create-react-app](https://github.com/facebook/create-react-app). Feel free to change this to a framework of your choice. This should have basic routing and make it easy to view the different articles.
+    - We've provided a small boilerplate React app generated with [create-react-app](https://github.com/facebook/create-react-app). Feel free to change this to a framework of your choice. This should have basic routing and make it easy to view the different articles.
 5. Upload your project to a Git repository. We prefer Github but Bitbucket works as well.
 
 ## Evaluation
