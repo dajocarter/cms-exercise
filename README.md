@@ -1,12 +1,15 @@
 # Eaze CMS Engineer Homework
 The purpose of this exercise is to help the Eaze Engineering team get a feel for your technical skill level.
+
 The end goal of the project is to build a system for writers to integrate GIFs into their articles. Writers should be able to search for GIFs directly in the WordPress editor. The articles are going to be rendered in a custom frontend (using React/Angular/Vue) that uses the WordPress API to fetch the content.
+
 This exercise is divided into two parts:
-Set up and customize WordPress
-Build a frontend for the data provided by the WordPress Rest API
+- Set up and customize WordPress.
+- Build a frontend for the data provided by the WordPress Rest API.
+
 ## WordPress Exercise
 1. You’ll need to get a WordPress development environment set up on your local machine.
-2. Use the provided template XML at `<root>/template.xml` to seed your database instance.
+2. Use the provided template XML at [`<root>/template.xml`](template.xml) to seed your database instance.
 3. Set up the editor so that writers will have the ability to select a GIF to include in an article.
   a. The writer should should be able to:
     - Search for a list of GIFs.
@@ -21,10 +24,10 @@ Build a frontend for the data provided by the WordPress Rest API
 Assume that we will have a local instance of WordPress running at the root level of the directory, running on port 8888. The frontend app will also be at root level so make sure to have your paths set up correctly.
 
 ```shell
-root/        # → Root folder for the project
+root/               # → Root folder for the project
   ├── wp/           # → Local WordPress Core (Running on port :8888)
   ├── template.xml  # → Seed for database
-  └── frontend/   # → React client app
+  └── frontend/     # → React client app
 ```
 
 The frontend boilerplate provided starts using `[npm|yarn] install` and `[npm|yarn] start`. Make sure that your frontend app is able to do the same.
