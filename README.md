@@ -33,7 +33,7 @@ We strongly encourage you to pick a couple of optional improvements. The followi
 
 ## Coding at Eaze
 - At Eaze we strive for writing simple, maintainable and clean code.
-- We prefer simplicity and over complexity.
+- We prefer simplicity over complexity.
 - We comment our code and commit often.
 - We love our users and we really care about providing a good user experience and pleasant UI.
 - We encourage out of the box thinking and we love to be impressed.
