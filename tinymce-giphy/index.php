@@ -14,12 +14,12 @@ class TinyMCE_Giphy
   /**
    * Constructor. Called when the plugin is initialised.
    */
-  function __construct()
+  public function __construct()
   {
     add_action('admin_init', array($this, 'giphygifsearch_setup'));
   }
 
-  function giphygifsearch_setup()
+  public function giphygifsearch_setup()
   {
     // Check if the user can edit posts or pages before registering the plugin
     if (!current_user_can('edit_posts') && !current_user_can('edit_pages')) return;
@@ -32,13 +32,13 @@ class TinyMCE_Giphy
     add_filter('mce_buttons', array(&$this, 'giphygifsearch_register_button'));
   }
 
-  function giphygifsearch_register_plugin($plugin_array)
+  public function giphygifsearch_register_plugin($plugin_array)
   {
     $plugin_array['giphygifsearch'] = plugins_url('/index.js', __FILE__);
     return $plugin_array;
   }
 
-  function giphygifsearch_register_button($buttons)
+  public function giphygifsearch_register_button($buttons)
   {
     $buttons[] = 'giphygifsearch';
     return $buttons;
