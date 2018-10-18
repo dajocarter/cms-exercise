@@ -8,4 +8,43 @@
  * Author URI: https://www.dajocarter.com/
  */
 
+class TinyMCE_Giphy
+{
+
+  /**
+   * Constructor. Called when the plugin is initialised.
+   */
+  function __construct()
+  {
+    add_action('admin_init', array($this, 'giphygifsearch_setup'));
+  }
+
+  function giphygifsearch_setup()
+  {
+    // Check if the user can edit posts or pages before registering the plugin
+    if (!current_user_can('edit_posts') && !current_user_can('edit_pages')) return;
+
+    // Check if the user has the visual editor enabled before registering the plugin
+    if (get_user_option('rich_editing') !== 'true') return;
+
+    // Now we're good to go
+    add_filter('mce_external_plugins', array(&$this, 'giphygifsearch_register_plugin'));
+    add_filter('mce_buttons', array(&$this, 'giphygifsearch_register_button'));
+  }
+
+  function giphygifsearch_register_plugin($plugin_array)
+  {
+    $plugin_array['giphygifsearch'] = plugins_url('/index.js', __FILE__);
+    return $plugin_array;
+  }
+
+  function giphygifsearch_register_button($buttons)
+  {
+    $buttons[] = 'giphygifsearch';
+    return $buttons;
+  }
+}
+
+$tinymce_giphy = new TinyMCE_Giphy;
+
 ?>
