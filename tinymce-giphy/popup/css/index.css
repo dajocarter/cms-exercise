@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo__image {
+  height: 45px;
+  padding: 0.5rem;
+}
