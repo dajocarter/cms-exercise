@@ -3,7 +3,17 @@
     init: function(editor, url) {
       editor.addButton("giphygifsearch", {
         title: "Giphy GIF Search",
-        image: url + "/logo.png"
+        image: url + "/logo.png",
+        onclick: function() {
+          editor.windowManager.open({
+            file: url + "/popup/index.html",
+            width: 480,
+            height: 540,
+            inline: true,
+            resizable: true,
+            scrollbars: true
+          });
+        }
       });
     },
 
