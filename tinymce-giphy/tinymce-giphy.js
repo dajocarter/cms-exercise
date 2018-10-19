@@ -7,7 +7,7 @@
         onclick: function() {
           editor.windowManager.open(
             {
-              file: url + "/popup/index.html",
+              file: url + "/popup/tinymce-giphy.html",
               width: 480,
               height: 540,
               inline: true,
