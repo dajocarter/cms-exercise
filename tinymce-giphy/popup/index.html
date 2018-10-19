@@ -23,6 +23,32 @@
       </form>
     </footer>
   </div>
+
+  <script type="text/javascript">
+    // Get params from plugin init
+    var args = top.tinymce.activeEditor.windowManager.getParams();
+    // Save jQuery to $ variable
+    var $ = args['jquery'];
+    // Get iframe <body> to set a context for jQuery
+    // bc it will use the background parent window as a default
+    // so need to set context to the popup
+    var context = document.getElementsByTagName('body')[0];
+    // Now just include context as 2nd argument to every jQuery selector
+    $('footer form', context).submit(function (evt) {
+      evt.preventDefault();
+
+      // Build a fake shortcode
+      var query = $('input[name="query"]', context).val();
+      var shortcode = '[giphy';
+      if (query !== "") {
+        shortcode += ' text="' + query + '"';
+      }
+      shortcode += ' ]';
+      // Inject shortcode into the editor and close the popup
+      args.editor.selection.setContent(shortcode);
+      args.editor.windowManager.close();
+    });
+  </script>
 </body>
 
 </html>
