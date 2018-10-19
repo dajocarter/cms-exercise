@@ -1,18 +1,24 @@
-(function() {
+(function($) {
   var GiphyGifSearch = {
     init: function(editor, url) {
       editor.addButton("giphygifsearch", {
         title: "Giphy GIF Search",
         image: url + "/logo.png",
         onclick: function() {
-          editor.windowManager.open({
-            file: url + "/popup/index.html",
-            width: 480,
-            height: 540,
-            inline: true,
-            resizable: true,
-            scrollbars: true
-          });
+          editor.windowManager.open(
+            {
+              file: url + "/popup/index.html",
+              width: 480,
+              height: 540,
+              inline: true,
+              resizable: true,
+              scrollbars: true
+            },
+            {
+              editor: editor,
+              jquery: $
+            }
+          );
         }
       });
     },
@@ -31,4 +37,4 @@
   // Register plugin
   tinymce.create("tinymce.plugins.giphygifsearch", GiphyGifSearch);
   tinymce.PluginManager.add("giphygifsearch", tinymce.plugins.giphygifsearch);
-})();
+})(jQuery);
