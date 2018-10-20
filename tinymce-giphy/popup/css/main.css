@@ -90,15 +90,3 @@ body {
   max-width: 100%;
   transition: all 0.15s ease-in-out;
 }
-
-#more-gifs {
-  display: block;
-  margin: 1rem auto;
-  border: 0;
-  border-radius: 3px;
-  padding: 1rem;
-  background: rebeccapurple;
-  color: white;
-  cursor: pointer;
-  text-transform: uppercase;
-}

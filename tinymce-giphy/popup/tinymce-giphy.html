@@ -19,7 +19,6 @@
     </header>
     <div id="container">
       <ul id="gifs"></ul>
-      <button id="more-gifs">More GIFs</button>
     </div>
   </div>
 
@@ -30,7 +29,7 @@
 
     // Get params from plugin init
     const args = top.tinymce.activeEditor.windowManager.getParams();
-    // Get editor so we can close after selecting a GIF
+    // Get editor so we can close it after selecting a GIF
     const { editor } = args;
 
     // Event Listeners
@@ -40,11 +39,6 @@
 
       const query = document.getElementById('searchform__input').value;
       query ? GiphySearch.search('search', query) : GiphySearch.search('trending');
-    });
-
-    const moreButton = document.getElementById("more-gifs");
-    moreButton.addEventListener('click', evt => {
-      GiphySearch.search();
     });
 
     const gifsList = document.getElementById("gifs");
