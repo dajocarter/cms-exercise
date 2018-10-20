@@ -51,6 +51,6 @@ class TinyMCE_Giphy
   }
 }
 
-$tinymce_giphy = new TinyMCE_Giphy;
+$tinymce_giphy = new TinyMCE_Giphy();
 
 ?>
