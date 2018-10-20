@@ -4,12 +4,12 @@ body {
   margin: 0;
 }
 
-.logo {
+#logo {
   text-align: center;
   height: 52px;
 }
 
-.logo__image {
+#logo__image {
   height: 42px;
   padding: 5px;
 }
