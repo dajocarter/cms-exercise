@@ -13,6 +13,41 @@ body {
   padding: 0.5rem;
 }
 
+#container {
+  overflow-y: auto;
+  height: 413px;
+}
+
+#gifs {
+  list-style: none;
+  margin: 0;
+  padding: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+#gifs li {
+  flex: 0 0 30%;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gifs li:hover img {
+  border: 2px solid white;
+  transform: scale(1.15);
+}
+
+#gifs img {
+  border: 2px solid transparent;
+  max-width: 100%;
+  transition: all 0.15s ease-in-out;
+}
+
 #more-gifs {
   display: block;
   margin: 1rem auto;
