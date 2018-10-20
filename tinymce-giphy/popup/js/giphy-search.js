@@ -6,6 +6,12 @@ const GiphySearch = {
   query: "",
   offset: 0,
   limit: 24,
+  /**
+   * Returns request from GIPHY
+   * @param {string} [url] - Endpoint to request. Should be empty to keep current request terms. Otherwise, must be one of 'search' or 'trending'.
+   * @param {string} [query] - The search term.
+   * @returns {Promise} Promise object represents the data returned from GIPHY.
+   */
   search: function(endpoint, query) {
     // Configure URL to fetch
     let fetchURL = `https://api.giphy.com/v1/gifs/${
