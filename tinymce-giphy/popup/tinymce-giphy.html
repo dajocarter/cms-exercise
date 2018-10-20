@@ -33,6 +33,12 @@
     const { editor } = args;
 
     // Event Listeners
+    const container = document.getElementById('container');
+    container.addEventListener('scroll', evt => {
+      const hitBottom = evt.target.scrollHeight - evt.target.scrollTop === evt.target.offsetHeight;
+      if (hitBottom) GiphySearch.search();
+    });
+
     const form = document.getElementById("searchform");
     form.addEventListener('submit', evt => {
       evt.preventDefault();
