@@ -50,6 +50,8 @@
     const gifsList = document.getElementById("gifs");
     gifsList.addEventListener('click', evt => {
       if (evt.target) {
+        // Ignore clicks on the UL or else it will embed the first gif in the list
+        if (evt.target.nodeName === "UL") return;
         const gif = evt.target.nodeName === "IMG" ? evt.target : evt.target.querySelector("img");
         const gif_id = gif.dataset.gifId;
         // Inject iframe into the editor and close the popup
