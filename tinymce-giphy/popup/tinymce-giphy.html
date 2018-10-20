@@ -44,6 +44,12 @@
       evt.preventDefault();
 
       const query = $('input[name="query"]', context).val();
+      query ? GiphySearch.search('search', query) : GiphySearch.search('trending');
+    });
+
+    $("#more-gifs", context).on('click', function (evt) {
+      GiphySearch.search();
+    });
       // Inject iframe into the editor and close the popup
       const iframe = `<iframe src="https://giphy.com/embed/${gif_id}" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>`;
       args.editor.selection.setContent(iframe);
