@@ -37,15 +37,10 @@
     $('footer form', context).submit(function (evt) {
       evt.preventDefault();
 
-      // Build a fake shortcode
-      var shortcode = '[giphy';
-      if (query !== "") {
-        shortcode += ' text="' + query + '"';
-      }
-      shortcode += ' ]';
-      // Inject shortcode into the editor and close the popup
-      args.editor.selection.setContent(shortcode);
       const query = $('input[name="query"]', context).val();
+      // Inject iframe into the editor and close the popup
+      const iframe = `<iframe src="https://giphy.com/embed/${gif_id}" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>`;
+      args.editor.selection.setContent(iframe);
       args.editor.windowManager.close();
     });
   </script>
