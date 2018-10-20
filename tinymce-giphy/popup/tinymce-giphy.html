@@ -50,6 +50,10 @@
     $("#more-gifs", context).on('click', function (evt) {
       GiphySearch.search();
     });
+
+    $('#gifs', context).on('click', 'li img', function (evt) {
+      const gif = evt.target;
+      const gif_id = gif.dataset.gifId;
       // Inject iframe into the editor and close the popup
       const iframe = `<iframe src="https://giphy.com/embed/${gif_id}" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>`;
       args.editor.selection.setContent(iframe);
