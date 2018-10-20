@@ -40,24 +40,31 @@
     // so need to set context to the popup
     const context = document.getElementsByTagName('body')[0];
     // Now just include context as 2nd argument to every jQuery selector
-    $('footer form', context).submit(function (evt) {
+
+
+    const form = document.getElementById("searchform");
+    form.addEventListener('submit', evt => {
       evt.preventDefault();
 
-      const query = $('input[name="query"]', context).val();
+      const query = document.getElementById('searchform__input').value;
       query ? GiphySearch.search('search', query) : GiphySearch.search('trending');
     });
 
-    $("#more-gifs", context).on('click', function (evt) {
+    const moreButton = document.getElementById("more-gifs");
+    moreButton.addEventListener('click', evt => {
       GiphySearch.search();
     });
 
-    $('#gifs', context).on('click', 'li img', function (evt) {
-      const gif = evt.target;
-      const gif_id = gif.dataset.gifId;
-      // Inject iframe into the editor and close the popup
-      const iframe = `<iframe src="https://giphy.com/embed/${gif_id}" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>`;
-      args.editor.selection.setContent(iframe);
-      args.editor.windowManager.close();
+    const gifsList = document.getElementById("gifs");
+    gifsList.addEventListener('click', evt => {
+      if (evt.target) {
+        const gif = evt.target.nodeName === "IMG" ? evt.target : evt.target.querySelector("img");
+        const gif_id = gif.dataset.gifId;
+        // Inject iframe into the editor and close the popup
+        const iframe = `<iframe src="https://giphy.com/embed/${gif_id}" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>`;
+        args.editor.selection.setContent(iframe);
+        args.editor.windowManager.close();
+      }
     });
   </script>
 </body>
