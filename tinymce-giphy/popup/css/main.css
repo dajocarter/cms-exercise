@@ -4,19 +4,18 @@ body {
   margin: 0;
 }
 
-#logo {
+header {
   text-align: center;
-  height: 62px;
 }
 
-#logo__image {
-  height: 52px;
+#logo {
+  height: 40px;
   padding: 5px;
 }
 
 #searchform {
   display: flex;
-  padding: 0 0 1rem 1rem;
+  padding-left: 1rem;
 }
 
 .screen-reader-text {
@@ -33,10 +32,10 @@ body {
 }
 
 #searchform__input {
+  height: 32px;
   width: 80%;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  padding-left: 1rem;
+  font-size: 0.8rem;
   border: 0;
   border-radius: 0.25rem;
   background-color: #fff;
@@ -45,15 +44,30 @@ body {
 }
 
 #searchform__submit {
-  height: 40px;
+  height: 32px;
   width: 15%;
   background-color: transparent;
   background-image: url(../img/icon_search.png);
   background-repeat: no-repeat;
-  background-size: 2rem;
+  background-size: 1.75rem;
   background-position: center;
   border: 0;
   cursor: pointer;
+}
+
+#scrollToTop {
+  cursor: pointer;
+  color: white;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0.5rem 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.75s ease-out, visibility 0.75s ease-out;
 }
 
 #container {

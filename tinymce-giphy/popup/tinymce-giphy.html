@@ -8,14 +8,13 @@
 <body>
   <div id="app">
     <header>
-      <div id="logo">
-        <img id="logo__image" src="img/giphy_logo_with_text.png" />
-      </div>
+      <img id="logo" src="img/giphy_logo_with_text.png" />
       <form id="searchform">
         <label for="query" class="screen-reader-text">Search GIFs via GIPHY</label>
         <input id="searchform__input" type="text" name="query" placeholder="Search GIFs via GIPHY" />
         <input id="searchform__submit" type="submit" value="" />
       </form>
+      <p id="scrollToTop">Scroll to Top</p>
     </header>
     <div id="container">
       <ul id="gifs"></ul>
@@ -34,21 +33,40 @@
 
     // Event Listeners
     const container = document.getElementById('container');
+    const scrollToTop = document.getElementById('scrollToTop');
+
     container.addEventListener('scroll', evt => {
+      let showStyles = `
+        opacity: 1;
+        visibility: visible;
+      `;
+      let hideStyles = `
+        opacity: 0;
+        visibility: hidden;
+      `;
+      // Show/Hide scroll-to-top
+      if (event.target.scrollTop > 50) {
+        scrollToTop.style = showStyles;
+      } else {
+        scrollToTop.style = hideStyles;
+      }
+      // Add more gifs when the bottom of the container is reached
       const hitBottom = evt.target.scrollHeight - evt.target.scrollTop === evt.target.offsetHeight;
       if (hitBottom) GiphySearch.search();
     });
 
-    const form = document.getElementById("searchform");
-    form.addEventListener('submit', evt => {
+    scrollToTop.addEventListener('click', evt => {
+      container.scroll({ top: 0, left: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById("searchform").addEventListener('submit', evt => {
       evt.preventDefault();
 
       const query = document.getElementById('searchform__input').value;
       query ? GiphySearch.search('search', query) : GiphySearch.search('trending');
     });
 
-    const gifsList = document.getElementById("gifs");
-    gifsList.addEventListener('click', evt => {
+    document.getElementById("gifs").addEventListener('click', evt => {
       if (evt.target) {
         // Ignore clicks on the UL or else it will embed the first gif in the list
         if (evt.target.nodeName === "UL") return;
