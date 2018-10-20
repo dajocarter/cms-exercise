@@ -41,6 +41,22 @@ const GiphySearch = {
    * @returns {Promise} Promise object represents the data returned from GIPHY.
    */
   search: function(endpoint, query) {
+    // If an endpoint was passed, make it the current endpoint
+    // Otherwise, keep using the same endpoint
+    const lastEndpoint = this.endpoint;
+    this.endpoint = endpoint ? endpoint : lastEndpoint;
+    // If the endpoint is 'trending', then there should be no query
+    // Otherwise, this is a search which needs a query
+    // so set it to the passed query or keep it the same as the last query
+    const lastQuery = this.query;
+    this.query = this.endpoint === "trending" ? "" : query ? query : lastQuery;
+    // If an endpoint changed or a query string changed
+    // Then it is a new request and we need to reset the offset
+    const lastOffset = this.offset;
+    this.offset =
+      this.endpoint !== lastEndpoint || this.query !== lastQuery
+        ? 0
+        : lastOffset + this.limit;
     // Configure URL to fetch
     let fetchURL = `https://api.giphy.com/v1/gifs/${
       this.endpoint
