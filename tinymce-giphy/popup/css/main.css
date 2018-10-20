@@ -85,7 +85,7 @@ footer form {
   word-wrap: normal !important;
 }
 
-#search__input {
+#searchform_input {
   width: 80%;
   padding: 0.5rem 1rem;
   font-size: 1rem;
@@ -97,7 +97,7 @@ footer form {
   letter-spacing: 1px;
 }
 
-#search__submit {
+#searchform_submit {
   height: 44px;
   width: 15%;
   background-color: transparent;
