@@ -6,6 +6,10 @@ const GiphySearch = {
   query: "",
   offset: 0,
   limit: 24,
+  /**
+   * Transforms response into HTML and appends into popup
+   * @param {Promise} resp - Response from fetching Giphy API
+   */
   renderGifs: function(resp) {
     // Grab the UL
     const gifsContainer = document.getElementById("gifs");
