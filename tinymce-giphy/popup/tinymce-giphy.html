@@ -31,7 +31,7 @@
     // Get params from plugin init
     const args = top.tinymce.activeEditor.windowManager.getParams();
     // Get editor so we can close after selecting a GIF
-    const editor = args.editor;
+    const { editor } = args;
 
     // Event Listeners
     const form = document.getElementById("searchform");
