@@ -27,21 +27,15 @@
 
   <script src="js/giphy-search.js"></script>
   <script type="text/javascript">
-    // Run initial search
+    // Show trending GIfs on load
     GiphySearch.search("trending");
-
 
     // Get params from plugin init
     const args = top.tinymce.activeEditor.windowManager.getParams();
-    // Save jQuery to $ variable
-    const $ = args['jquery'];
-    // Get iframe <body> to set a context for jQuery
-    // bc it will use the background parent window as a default
-    // so need to set context to the popup
-    const context = document.getElementsByTagName('body')[0];
-    // Now just include context as 2nd argument to every jQuery selector
+    // Get editor so we can close after selecting a GIF
+    const editor = args.editor;
 
-
+    // Event Listeners
     const form = document.getElementById("searchform");
     form.addEventListener('submit', evt => {
       evt.preventDefault();
@@ -62,8 +56,8 @@
         const gif_id = gif.dataset.gifId;
         // Inject iframe into the editor and close the popup
         const iframe = `<iframe src="https://giphy.com/embed/${gif_id}" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>`;
-        args.editor.selection.setContent(iframe);
-        args.editor.windowManager.close();
+        editor.selection.setContent(iframe);
+        editor.windowManager.close();
       }
     });
   </script>

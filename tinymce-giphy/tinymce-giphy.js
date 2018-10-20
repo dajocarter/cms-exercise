@@ -15,8 +15,7 @@
               scrollbars: true
             },
             {
-              editor: editor,
-              jquery: $
+              editor: editor
             }
           );
         }

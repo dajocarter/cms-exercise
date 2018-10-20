@@ -17,12 +17,6 @@ class TinyMCE_Giphy
   public function __construct()
   {
     add_action('admin_init', array($this, 'giphygifsearch_setup'));
-    add_action('admin_enqueue_scripts', array($this, 'giphygifsearch_dependencies'));
-  }
-
-  public function giphygifsearch_dependencies()
-  {
-    wp_enqueue_script('jquery');
   }
 
   public function giphygifsearch_setup()
