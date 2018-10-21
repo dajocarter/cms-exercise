@@ -1,2 +1,5 @@
 .DS_Store
-wp
+uploads/*
+!uploads/.gitkeep
+upgrade/*
+!upgrade/.gitkeep
