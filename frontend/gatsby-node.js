@@ -8,9 +8,13 @@ const path = require('path')
 exports.sourceNodes = ({ getNodes, actions }) => {
   const { createNodeField } = actions
 
-  // Filter for only page nodes
-  const pageNodes = getNodes().filter(
+  // Grag all nodes with hierarchy (pages, categories)
+  const allNodes = getNodes()
+  const pageNodes = allNodes.filter(
     node => node.internal.type === 'wordpress__PAGE'
+  )
+  const categoryNodes = allNodes.filter(
+    node => node.internal.type === 'wordpress__CATEGORY'
   )
 
   // Build each node's path
@@ -33,6 +37,22 @@ exports.sourceNodes = ({ getNodes, actions }) => {
       value: path,
     })
   })
+  categoryNodes.forEach(node => {
+    // Save the original node for use down below
+    const original = node
+    // Start with the node's slug
+    let path = `${node.slug}/`
+    // Recursively check for a parent and prepend parent's slug to path
+    while (node.wordpress_parent) {
+      node = categoryNodes.find(
+        parentNode => node.wordpress_parent === parentNode.wordpress_id
+      )
+      path = `${node.slug}/${path}`
+    }
+    path = `/category/${path}`
+    // Add full path to node -- available at node.fields.path
+    createNodeField({ node: original, name: `path`, value: path })
+  })
 }
 
 /**
@@ -45,6 +65,8 @@ exports.createPages = ({ graphql, actions }) => {
     // Gather templates
     const pageTemplate = path.resolve('./src/templates/page.js')
     const postTemplate = path.resolve('./src/templates/post.js')
+    const categoryTemplate = path.resolve('./src/templates/category.js')
+    const tagTemplate = path.resolve('./src/templates/tag.js')
     // Query for all wordpress pages and posts then create pages for them
     resolve(
       graphql(`
@@ -62,6 +84,24 @@ exports.createPages = ({ graphql, actions }) => {
           posts: allWordpressPost(
             filter: { status: { eq: "publish" }, format: { eq: "standard" } }
           ) {
+            edges {
+              node {
+                id
+                slug
+              }
+            }
+          }
+          categories: allWordpressCategory(filter: { count: { gt: 0 } }) {
+            edges {
+              node {
+                id
+                fields {
+                  path
+                }
+              }
+            }
+          }
+          tags: allWordpressTag(filter: { count: { gt: 0 } }) {
             edges {
               node {
                 id
@@ -90,6 +130,26 @@ exports.createPages = ({ graphql, actions }) => {
           createPage({
             path: `/${node.slug}/`,
             component: postTemplate,
+            context: {
+              id: node.id,
+            },
+          })
+        })
+
+        result.data.categories.edges.forEach(({ node }) => {
+          createPage({
+            path: node.fields.path,
+            component: categoryTemplate,
+            context: {
+              id: node.id,
+            },
+          })
+        })
+
+        result.data.tags.edges.forEach(({ node }) => {
+          createPage({
+            path: `/tag/${node.slug}/`,
+            component: tagTemplate,
             context: {
               id: node.id,
             },
