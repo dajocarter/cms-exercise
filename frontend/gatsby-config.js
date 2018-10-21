@@ -5,6 +5,37 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
+      resolve: 'gatsby-source-wordpress',
+      options: {
+        baseUrl: 'localhost:8888',
+        protocol: 'http',
+        hostingWPCOM: false,
+        useACF: false,
+        acfOptionPageIds: [],
+        verboseOutput: true,
+        perPage: 100,
+        searchAndReplaceContentUrls: {
+          sourceUrl: 'http://localhost:8888',
+          replacementUrl: 'http://localhost:8888',
+        },
+        concurrentRequests: 10,
+        includedRoutes: [
+          '/*/*/categories',
+          '/*/*/comments',
+          '/*/*/posts',
+          '/*/*/pages',
+          '/*/*/media',
+          '/*/*/tags',
+          '/*/*/taxonomies',
+          '/*/*/users',
+        ],
+        excludedRoutes: [],
+        normalizer: function({ entities }) {
+          return entities
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'gatsby-starter-default',
