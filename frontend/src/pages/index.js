@@ -1,22 +1,8 @@
 import React from 'react'
-import { StaticQuery, graphql, Link } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
-
-const PostList = ({ title, posts }) => (
-  <div>
-    <h2>{title}</h2>
-    <ul>
-      {posts.map(({ node }) => (
-        <li key={node.wordpress_id}>
-          <Link to={node.fields ? node.fields.path : node.slug}>
-            {node.title}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </div>
-)
+import PostList from '../components/PostList'
 
 const IndexPage = () => (
   <StaticQuery

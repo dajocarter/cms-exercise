@@ -1,23 +1,15 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
+import PostList from '../components/PostList'
 
 const CategoryTemplate = ({ data }) => (
   <Layout>
     <h1>{data.category.name}</h1>
     <p>There are {data.category.count} posts with this category.</p>
     <p>{data.category.description}</p>
-    {data.posts &&
-      data.posts.edges && (
-        <ul>
-          {data.posts.edges.map(({ node }) => (
-            <li key={node.id}>
-              <Link to={`/${node.slug}/`}>{node.title}</Link>
-            </li>
-          ))}
-        </ul>
-      )}
+    {data.posts && <PostList posts={data.posts.edges} />}
   </Layout>
 )
 
