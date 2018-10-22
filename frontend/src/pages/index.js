@@ -25,6 +25,7 @@ const IndexPage = () => (
         pages: allWordpressPage(filter: { status: { eq: "publish" } }) {
           edges {
             node {
+              wordpress_id
               title
               fields {
                 path
@@ -37,6 +38,7 @@ const IndexPage = () => (
         ) {
           edges {
             node {
+              wordpress_id
               title
               slug
             }
