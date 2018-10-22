@@ -9691,6 +9691,13 @@ typography-normalize@^0.14.0:
   resolved "https://registry.yarnpkg.com/typography-normalize/-/typography-normalize-0.14.0.tgz#1d77c1fe2aaf4a51b3673c4c85c85a65a2d4b573"
   integrity sha1-HXfB/iqvSlGzZzxMhchaZaLUtXM=
 
+typography-theme-bootstrap@^0.16.7:
+  version "0.16.7"
+  resolved "https://registry.yarnpkg.com/typography-theme-bootstrap/-/typography-theme-bootstrap-0.16.7.tgz#53681247ae5b2bbad642d1d83fb1951377e47888"
+  integrity sha512-eEA4R6S7SCZdgVC1FQZ1VvG8hE1+Waqfis1Rj7TjjtcjXhyAQNY/bGFTeyoDH910c38cUYlb1hXhABgpOP5Lag==
+  dependencies:
+    gray-percentage "^2.0.0"
+
 typography@^0.16.17:
   version "0.16.17"
   resolved "https://registry.yarnpkg.com/typography/-/typography-0.16.17.tgz#e166eda9b533d51c115e2b38becdb5cedd0a30e4"

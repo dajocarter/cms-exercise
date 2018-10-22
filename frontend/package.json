@@ -18,7 +18,8 @@
     "react-typography": "^0.16.13",
     "styled-components": "^4.0.2",
     "styled-normalize": "^8.0.2",
-    "typography": "^0.16.17"
+    "typography": "^0.16.17",
+    "typography-theme-bootstrap": "^0.16.7"
   },
   "keywords": [
     "gatsby"
