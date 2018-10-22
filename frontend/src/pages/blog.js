@@ -10,12 +10,30 @@ const BlogPage = () => (
       {
         posts: allWordpressPost(
           filter: { status: { eq: "publish" }, format: { eq: "standard" } }
+          sort: { fields: date, order: DESC }
         ) {
           edges {
             node {
               wordpress_id
               title
               slug
+              date(formatString: "MMMM D, YYYY")
+              excerpt
+              author {
+                name
+              }
+              categories {
+                wordpress_id
+                name
+                fields {
+                  path
+                }
+              }
+              tags {
+                wordpress_id
+                name
+                slug
+              }
             }
           }
         }
