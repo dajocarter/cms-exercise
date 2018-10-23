@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Default Starter',
@@ -14,16 +18,18 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: 'localhost:8888',
-        protocol: 'http',
+        baseUrl: `${process.env.WP_DOMAIN}`,
+        protocol: `${process.env.WP_PROTOCOL}`,
         hostingWPCOM: false,
         useACF: false,
         acfOptionPageIds: [],
         verboseOutput: true,
         perPage: 100,
         searchAndReplaceContentUrls: {
-          sourceUrl: 'http://localhost:8888',
-          replacementUrl: 'http://localhost:8888',
+          sourceUrl: `${process.env.WP_PROTOCOL}://${process.env.WP_DOMAIN}`,
+          replacementUrl: `${process.env.WP_PROTOCOL}://${
+            process.env.WP_DOMAIN
+          }`,
         },
         concurrentRequests: 10,
         includedRoutes: [

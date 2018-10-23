@@ -13,22 +13,24 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
 ## 🚀 Quick start
 
-1.  **Install the Gatsby CLI.**
+1.  **Install the Gatsby CLI and dependencies.**
 
     The Gatsby CLI helps you create new sites using Gatsby starters (like this one!)
 
     ```sh
     # install the Gatsby CLI globally
     npm install -g gatsby-cli
+    # install dependencies
+    yarn/npm install
     ```
 
-2.  **Create a Gatsby site.**
+2.  **Create an environment config file**
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+    Create a file named `.env.development` that includes the domain and protocol of your source WordPress site. You must use the following variable names, just change the values if need be:
 
     ```sh
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter
+    WP_DOMAIN=localhost:8888
+    WP_PROTOCOL=http
     ```
 
 3.  **Start developing.**
@@ -36,7 +38,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
     Navigate into your new site’s directory and start it up.
 
     ```sh
-    cd my-default-starter/
+    cd frontend/
     gatsby develop
     ```
 
@@ -44,7 +46,7 @@ _Have another more specific idea? You may want to check out our vibrant collecti
 
     Your site is now running at `http://localhost:8000`!
 
-    _Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+    \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
 
     Open the the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
