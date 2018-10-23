@@ -15,8 +15,8 @@ const PageTemplate = ({ data }) => (
       <EntryHeader>
         <EntryTitle>{data.page.title}</EntryTitle>
       </EntryHeader>
+      <EntryContent dangerouslySetInnerHTML={{ __html: data.page.content }} />
     </Article>
-    <EntryContent dangerouslySetInnerHTML={{ __html: data.page.content }} />
   </Layout>
 )
 
