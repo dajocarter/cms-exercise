@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
   ${styledNormalize}
 `
 
-const SiteWrapper = styled.div`
+const SiteWrapper = styled.main`
   margin: 0 auto;
   max-width: 960px;
   padding: 0px 1.0875rem 1.45rem;
