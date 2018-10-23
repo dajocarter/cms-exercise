@@ -73,7 +73,7 @@
         const gif = evt.target.nodeName === "IMG" ? evt.target : evt.target.querySelector("img");
         const gif_id = gif.dataset.gifId;
         // Inject iframe into the editor and close the popup
-        const iframe = `<iframe src="https://giphy.com/embed/${gif_id}" width="480" height="406" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>`;
+        const iframe = `<div class="embed-container"><iframe src="https://giphy.com/embed/${gif_id}" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div>`;
         editor.selection.setContent(iframe);
         editor.windowManager.close();
       }
